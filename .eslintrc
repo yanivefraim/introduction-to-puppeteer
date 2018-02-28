@@ -17,6 +17,7 @@
     "no-plusplus": "off",
     "no-confusing-arrow": "off",
     "no-console": "off",
+    "no-debugger": "off",
     "no-multi-assign": "off",
     "no-param-reassign": "off",
     "no-return-assign": "off",
