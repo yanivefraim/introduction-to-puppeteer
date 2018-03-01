@@ -34,6 +34,8 @@ Agenda:
 - Puppeteer: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
 - Nice blog post about Headless Chrome: https://developers.google.com/web/updates/2017/04/headless-chrome
 
+- Chrome DevTools Protocol Viewer: https://chromedevtools.github.io/devtools-protocol/
+
 - Chrome devtools frontend: https://github.com/ChromeDevTools/devtools-frontend
 
 - Simple http server:
