@@ -28,3 +28,40 @@ Agenda:
 - screenshot
 - addscriptTag
 - intercept requests
+
+
+## Reference
+- Puppeteer: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
+- Nice blog post about Headless Chrome: https://developers.google.com/web/updates/2017/04/headless-chrome
+
+- Chrome devtools frontend: https://github.com/ChromeDevTools/devtools-frontend
+
+- Simple http server:
+
+```bash
+~/serving-folder> python -m SimpleHTTPServer 3000
+```
+
+- Debugging Canary:
+
+    ```bash
+    alias canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+    canary --remote-debugging-port=9222 http://www.wix.com
+    ```
+
+    Open a targert and send an alert:
+
+    ```js
+    // Open websocket connection
+    const ws = new WebSocket(<-webSocketDebuggerUrl->);
+    // listen to incoming messages
+    ws.onmessage = ms => console.log(ms);
+    // Create new tab, Will return targetId
+    ws.send(JSON.stringify({method: 'Target.createTarget', id: 1, params:
+    {url: 'http://www.google.com'}}));
+    // Attach to target using receive d targetId; It will return sessionId
+    ws.send(JSON.stringify({method: 'Target.attachToTarget', id: 1, params: {targetId}}));
+    // Send messages using session we received
+    ws.send(JSON.stringify({method: 'Target.sendMessageToTarget', id: 3, params: {sessionId, message:'{"id":1,"method":"Runtime.callFunctionOn","params":{"executionContextId":2, "functionDeclaration": "() => alert(\'Hi from the other side\')"}}'}}))
+    ```
+
