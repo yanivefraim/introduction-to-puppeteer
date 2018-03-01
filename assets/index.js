@@ -1,4 +1,6 @@
 (async () => {
+  // This is just a super naive (and not so nice...) code.
+  // We use it just so we can test "search" functionality with Puppeteer
   document.querySelector('button').addEventListener('click', async () => {
     const res = await fetch('/data.json');
     const list = await res.json();
